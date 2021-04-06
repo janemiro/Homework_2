@@ -46,7 +46,6 @@ public class AutoForm {
         $$(".react-datepicker__day--0" + dayOfBirth)
                 .filter(not(cssClass("react-datepicker__day--outside-month")))
                 .first().click();
-        // предметы
         $("#subjectsInput").val(subject1).pressEnter();
         $("#subjectsInput").val(subject2);
         $(".subjects-auto-complete__menu-list").$(byText(subject2)).click();
