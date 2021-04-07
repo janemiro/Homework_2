@@ -57,24 +57,20 @@ public class AutoForm {
         $("#stateCity-wrapper").$(byText(state)).click();
         $("#city").click();
         $("#stateCity-wrapper").$(byText(city)).click();
-
         $("#submit").click();
 
-    }
-
-    public void check() {
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-
-        $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text(firstName + " " + lastName));
-        $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text(userEmail));
-        $(".table-responsive").$(byText("Gender")).parent().shouldHave(text(gender));
-        $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text(userNumber));
-        $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text(dayOfBirth + " " + monthOfBirth + "," + yearOfBirth));
-        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text(subject1 + ", " + subject2));
-        $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text(hobby1 + ", " + hobby2));
-        $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("1.png"));
-        $(".table-responsive").$(byText("Address")).parent().shouldHave(text(currentAddress));
-        $(".table-responsive").$(byText("State and City")).parent().shouldHave(text(state + " " + city));
+        $(".table-responsive").shouldHave(
+                text("Student Name " + firstName + " " + lastName),
+                text("Student Email " + userEmail),
+                text("Gender " + gender),
+                text("Mobile " + userNumber),
+                text("Date of Birth " + dayOfBirth + " " + monthOfBirth + "," + yearOfBirth),
+                text("Subjects " + subject1 + ", " + subject2),
+                text("Hobbies " + hobby1 + ", " + hobby2),
+                text("Picture " + picture),
+                text("Address " + currentAddress),
+                text("State and City " + state + " " + city));
 
     }
 
